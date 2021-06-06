@@ -1,6 +1,10 @@
 package ex11;
 
 /*
+
+*  UCF COP3330 Summer 2021 Assignment 1 Solution
+*  Copyright 2021 Jeyler Zabala
+
 Exercise 11 - Currency Conversion
 At some point, you might have to deal with currency exchange rates,
 and you’ll need to ensure your calculations are as precise as possible.
@@ -41,7 +45,6 @@ public class App {
         System.out.print("How many euros are you exchanging? ");
         euros = sc.nextDouble();
 
-        Scanner sc2 = new Scanner(System.in);
         System.out.print("What is the exchange rate? ");
         exchangeRate = sc.nextDouble();
 
