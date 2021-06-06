@@ -2,12 +2,14 @@ package ex11;
 
 /*
 Exercise 11 - Currency Conversion
-At some point, you might have to deal with currency exchange rates, and you’ll need to ensure your calculations are as precise as possible.
+At some point, you might have to deal with currency exchange rates,
+and you’ll need to ensure your calculations are as precise as possible.
 
-Write a program that converts currency. Specifically, convert euros to U.S. dollars. Prompt for the amount of money in euros you have, and prompt for the current exchange rate of the euro. Print out the new amount in U.S. dollars.
+Write a program that converts currency. Specifically, convert euros to U.S. dollars.
+Prompt for the amount of money in euros you have, and prompt for the current exchange rate of the euro.
+Print out the new amount in U.S. dollars.
 
 The formula for currency conversion is derived from
-
 c_to / c_frame = rate
 where
 c_to is the amount in U.S. dollars.
@@ -28,5 +30,31 @@ Build a dictionary of conversion rates and prompt for the countries instead of t
 Wire up your application to an external API that provides the current exchange rates.
 */
 
+import java.util.Scanner;
+
 public class App {
+    public static void main(String[] args) {
+
+        double euros, dollars, exchangeRate;
+        exchangeRate = 1.3751d;
+        double roundedDollars = 0.0d;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("How many euros are you exchanging? ");
+        euros = sc.nextDouble();
+
+        Scanner sc2 = new Scanner(System.in);
+        System.out.print("What is the exchange rate? ");
+        exchangeRate = sc.nextDouble();
+
+        dollars = euros * exchangeRate;
+
+        String strEuros = String.format("%.2f", euros);
+
+        roundedDollars = ((int) ((dollars * 100.0) + ((dollars < 0.0) ? -0.5 : 0.5))) / 100.0;
+
+        String output = String.format("%s euros at an exchange rate of %s is\n%s U.S. dollars.", strEuros, exchangeRate, roundedDollars);
+        System.out.println(output);
+
+    }
 }
