@@ -35,9 +35,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
 
-        double euros, dollars, exchangeRate;
-        exchangeRate = 1.3751d;
-        double roundedDollars = 0.0d;
+        double euros, dollars, exchangeRate, roundedDollars;
 
         Scanner sc = new Scanner(System.in);
         System.out.print("How many euros are you exchanging? ");
